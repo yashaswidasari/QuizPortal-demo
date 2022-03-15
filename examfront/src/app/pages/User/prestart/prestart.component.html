@@ -1,0 +1,56 @@
+<!-- {{quiz | json}} -->
+
+
+<div class="bootsrap-wrapper mt20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <!-- header -->
+                    <mat-card-header>
+                        <mat-card-title>
+                            Read the instructions of this page carefully
+                        </mat-card-title>
+                        <mat-card-subtitle>One Step more to go.</mat-card-subtitle>
+                    </mat-card-header>
+                    <!-- content  -->
+
+                    <mat-card-content class="ml20">
+                        <h1>{{quiz.title}}</h1>
+                        <p>{{quiz.description}}</p>
+                        <mat-divider></mat-divider>
+                        <br />
+                        <h1>Important Instructions</h1>
+                        <ul>
+                            <li>This quiz is only for practice purpose.</li>
+                            <li>You have to submit quiz within <b>{{quiz.numOfQuestions * 2}} Minutes</b>.</li>
+                            <li>You can attempt the quiz any number of times</li>
+                            <li>The quiz contains <b>{{quiz.numOfQuestions}} questions.</b></li>
+                            <li>Total Marks for the quiz is <b>{{quiz.maxMarks}}.</b></li>
+                            <li>All questions of MCQ Types.</li>
+                        </ul>
+
+                        <mat-divider>
+                        </mat-divider>
+                        <br />
+                        <h1>Attempting Quiz</h1>
+                        <ul>
+                            <li>Click <b>Start Quiz</b> button to start the quiz</li>
+                            <li>The tiime will start the moment you click the Start Test button</li>
+                            <li>You can not resume this quiz, if interrupted due to any reason.</li>
+                            <li>Click on <b>Next button</b> to move next question.</li>
+                            <li>Click on <b>Submit button</b> on completion of the quiz.</li>
+                            <li>The result will automatically generate in the pdf format.</li>
+                        </ul>
+                    </mat-card-content>
+                    <!-- actions  -->
+
+                    <mat-card-actions class="text-center">
+                        <button mat-raised-button color="primary" class="text-center" (click)="startQuiz()"> Start Quiz</button>
+
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

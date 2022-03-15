@@ -1,0 +1,53 @@
+<mat-card>
+  <h1 class="ml20">Upate Category</h1>
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <!-- {{category|json}} -->
+          <mat-card-content class="text-center">
+
+          </mat-card-content>
+
+
+          <form (ngSubmit)="formSubmit()">
+
+            <p>
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Category ID</mat-label>
+                <input autofocus [(ngModel)]="category.cid" name="cid" required matInput placeholder="Enter Here" />
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Category Title</mat-label>
+                <input autofocus [(ngModel)]="category.title" name="title" required matInput placeholder="Enter Here" />
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Category Description</mat-label>
+                <textarea [(ngModel)]="category.description" name="description" required matInput
+                  placeholder="Enter Here" rows="10"></textarea>
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+            </p>
+
+            <mat-card-actions>
+              <div class="container text-center">
+                <button type="submit" mat-raised-button color="primary">Update</button>
+              </div>
+            </mat-card-actions>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

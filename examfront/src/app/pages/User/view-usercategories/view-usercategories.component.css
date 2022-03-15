@@ -1,0 +1,10 @@
+.example-card {
+  border: 2px solid rgb(29, 1, 1);
+    max-width: 400px;
+    margin-bottom: 8px;
+  }
+
+  .example-header-image {
+    background-image: url('../../../../assets/menu-bar.png');
+    background-size: cover;
+  }

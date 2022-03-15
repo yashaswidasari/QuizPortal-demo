@@ -1,0 +1,29 @@
+<mat-card>
+    <h1>Delete Category</h1>
+    <div class="bootstrap-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 text-center">
+
+                    <form (ngSubmit)="formSubmit()">
+
+                        <p>
+                          <mat-form-field appearance="fill" class="full-width">
+                            <mat-label>Category Delete</mat-label>
+                            <input autofocus 
+                            [(ngModel)]="catId.cid" 
+                            name="catId" 
+                            required matInput placeholder="Enter Category Id" />
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                            <mat-hint>Enter Category ID</mat-hint>
+                          </mat-form-field>
+                        </p>
+                        <button mat-raised-button color="primary" type="submit">Delete</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>

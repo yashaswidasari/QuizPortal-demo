@@ -1,0 +1,48 @@
+<mat-card>
+ <h1 class="text-center">Profile Details</h1>
+ <mat-card-content>
+    <div class="bootstrap-wrapper">
+        <div class="container" class="text-center">
+            <img mat-card-image class="imageSize imageBorder mt20" src="../../../assets/profilelogo.png" alt="Image not loaded">
+            <h1 >{{user.firstName}} {{user.lastName}}</h1>
+            <div class="row text-center">
+                <div class="col-md-10 offset-md-1" >
+                    <!-- table details -->
+                    <table class="table fontSize20">
+                        <tr>
+                          <td>Username</td>
+                          <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                          <td>userid</td>
+                          <td>Exam{{user.id}}</td>
+                        </tr>
+                        <tr>
+                          <td>Phone</td>
+                          <td>{{user.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>{{user.authorities[0].authority}}</td>
+                          </tr>
+                          <tr>
+                            <td>Satus</td>
+                            <td>{{status}}</td>
+                          </tr>
+                        </table>
+                          <div class="container text-center mt20">
+                            <button mat-raised-button color="primary">Update</button>
+                            <button mat-raised-button color="accent" class="ml20">Share</button>
+                          </div>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   
+ </mat-card-content>
+
+</mat-card>
+

@@ -1,0 +1,28 @@
+
+<mat-card>
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+               
+                `   <mat-list>
+                        <h1>All Categories of Quizzes</h1>
+                        <mat-list-item  *ngFor="let c of categories">
+                            <mat-icon mat-list-icon>folder</mat-icon>
+                            <div mat-line>{{c.cid}}</div>
+                             <h2 mat-line>{{c.title}}</h2>
+                             <div mat-line>Description: {{c.description}}</div>
+                             <mat-divider></mat-divider>
+                        </mat-list-item>
+                    </mat-list>
+                    
+                    <div class="container text-center mt20">
+                        <button mat-raised-button color="primary" class="mr20" routerLink="/admin/addcategory">Add Category</button>
+                        <button mat-raised-button color="accent" routerLink="/admin/delcategory">Delete Category</button>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</mat-card>

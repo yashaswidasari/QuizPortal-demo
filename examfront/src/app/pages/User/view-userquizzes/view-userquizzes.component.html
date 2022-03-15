@@ -1,0 +1,46 @@
+<h1 class="mt20 text-center">All Quizzes</h1>
+<div class="bootstrap-wrapper">
+    <div class="container-fluid mt20">
+        <div class="row ">
+            <div class="col-md-4" *ngFor="let q of quizzes">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title-group>
+                            <mat-card-title>{{q.title}}</mat-card-title>
+                            <mat-card-subtitle>{{q.category.title}}</mat-card-subtitle>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>{{q.description}}</p>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <!-- ----------------------------------------------------------------------------------------------------------------- -->
+                        <!-- <button mat-flat-button color="primary" >View</button>
+                        <button mat-flat-button color="primary" >Start</button>
+                        <button mat-stroked-button color="primary" >Questions:{{q.numOfQuestions}}</button>
+                        <button mat-stroked-button color="primary">Marks:{{q.maxMarks}}</button> -->
+                        <!-- ----------------------------------------------------------------------------------------------------------------- -->
+                        <div class="row">
+                            <div class="div col-md-6">
+                                <button mat-button color="warn" [routerLink]="'/user/prestartquiz/'+q.qid">Start Quiz</button>
+                            </div>
+                                <div class="div col-md-6">
+                                    <button mat-button color="primary" >View</button>
+                                </div>
+                                <div class="div col-md-6">
+                                    <button mat-stroked-button  class="mt20">Questions:{{q.numOfQuestions}}</button>
+                                </div>
+                                <div class="div col-md-6">
+                                    <button mat-stroked-button class="mt20">Marks:{{q.maxMarks}}</button>
+                                </div>
+                            </div>
+                        <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

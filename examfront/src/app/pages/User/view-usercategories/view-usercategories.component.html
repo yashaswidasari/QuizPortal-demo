@@ -1,0 +1,24 @@
+<h1 class="mt20 text-center">Categories of the Quizzes</h1>
+<div class="bootstrap-wrapper">
+    <div class="container-fluid mt20">
+        <div class="row ">
+            <div class="col-md-4"  *ngFor="let c of categories">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title-group>
+                        <mat-card-title>{{c.title}}</mat-card-title>
+                        <mat-card-subtitle>{{c.description}}</mat-card-subtitle>
+                    </mat-card-title-group>
+                </mat-card-header>
+                    <mat-card-actions>
+                        <button mat-raised-button [routerLink]="'/user/viewquizbycat/'+c.cid+'/'+c.title">View Quizzes</button>
+                    </mat-card-actions>
+                </mat-card>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

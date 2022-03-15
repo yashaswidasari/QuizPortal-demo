@@ -1,0 +1,67 @@
+<mat-card>
+    <h1>Update New Quiz</h1>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form *ngIf="quiz" (ngSubmit)="formSubmit()">
+                        <!-- {{quiz|json}} -->
+                        <!-- title field -->
+                        <mat-form-field class="full-width">
+                            <mat-label>Enter Title</mat-label>
+                            <input type="text" name="title" placeholder="Enter here" [(ngModel)]="quiz.title" matInput />
+                        </mat-form-field>
+
+                        <!-- description field  -->
+                        <mat-form-field class="full-width">
+                            <mat-label>Enter Title</mat-label>
+                            <textarea type="text" name="description" placeholder="Enter here" [(ngModel)]="quiz.description" matInput></textarea>
+                        </mat-form-field>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- max marks -->
+                                <mat-form-field class="full-width">
+                                    <mat-label>Maximum Marks</mat-label>
+                                    <input type="text" name="maxMarks" placeholder="Enter here" [(ngModel)]="quiz.maxMarks" matInput />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- num of question -->
+                                <mat-form-field class="full-width">
+                                    <mat-label>No of Questions</mat-label>
+                                    <input type="text" name="NoOfQuestions" placeholder="Enter here" [(ngModel)]="quiz.numOfQuestions" matInput matInput />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- active toggle -->
+                                <mat-slide-toggle [(ngModel)]="quiz.active" name="active" class="mt20" color="primary" checked="checked">
+                                    Publish Status
+                                </mat-slide-toggle>
+                            </div>
+
+                            <br>
+                            <!-- category select  -->
+                            <mat-form-field appearance="fill" class="full-width mt20">
+                                <mat-label>Categories</mat-label>
+                                <mat-select [(ngModel)]="quiz.category.cid" name="cid">
+                                    <mat-option *ngFor="let c of categories" [value]="c.cid">
+                                        {{c.title}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <mat-card-actions>
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" >Update Quiz</button>
+                        </div>
+                    </mat-card-actions>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>

@@ -1,0 +1,51 @@
+<mat-toolbar class="nav-color">
+    <a
+    [routerLink]="['/']"
+     mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>book</mat-icon>
+    </a>
+
+    <span class="example-spacer">
+      QuizzPortal 
+    </span> 
+
+    <!-- login button  -->
+    <a *ngIf="!isLoggedIn"
+    [routerLink]="['/login']"
+    mat-icon-button 
+    class="example-icon favorite-icon mr20" 
+    aria-label="Example icon-button with heart icon">
+      <span >Login</span>
+    </a>
+    
+    <a *ngIf="!isLoggedIn"
+    [routerLink]="['/signup']"
+    mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" >
+        <span>SignUp</span>
+    </a>
+
+    <a *ngIf="isLoggedIn"
+    (click)="getRole()"
+    style="margin-right: 4% !important;"
+    mat-icon-button class="example-icon " aria-label="Example icon-button with share icon" >
+        <span>{{login.getUserDetails().username}}</span>
+    </a>
+
+    <a 
+    (click)="clickLogout()"
+    *ngIf="isLoggedIn"
+     [routerLink]="['/']"
+    mat-icon-button 
+    class="example-icon favorite-icon mr20" 
+    aria-label="Example icon-button with heart icon">
+
+      <span >LogOut</span>
+    </a>
+    
+   
+
+
+
+
+
+  </mat-toolbar>

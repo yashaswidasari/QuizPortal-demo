@@ -1,0 +1,121 @@
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+
+                <h1 class="mt20">{{questions[0].quiz.title}} quiz started!</h1>
+
+
+                <mat-card *ngFor="let ques of questions; let i =index" class="mt20">
+
+                    <mat-card-content>
+                        <h3> <b>Q {{i+1}})<span class="ml20" [innerHTML]="ques.content"></span>
+                            </b>
+                        </h3>
+                        <mat-divider></mat-divider>
+                        <br />
+                        <div class="container-fluid ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="radio" [value]="ques.option1" [name]="''+i"
+                                        [(ngModel)]="ques.givenAnswer" />
+
+                                    <b>A: </b> {{ques.option1}}
+
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio" [value]="ques.option2" [name]="''+i"
+                                        [(ngModel)]="ques.givenAnswer" />
+
+                                    <b>B: </b> {{ques.option2}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mt20">
+                                    <input type="radio" [value]="ques.option3" [name]="''+i"
+                                        [(ngModel)]="ques.givenAnswer" />
+                                    <b>C: </b> {{ques.option3}}
+                                </div>
+                                <div class="col-md-6 mt20">
+                                    <input type="radio" [value]="ques.option4" [name]="''+i"
+                                        [(ngModel)]="ques.givenAnswer" />
+                                    <b>D: </b> {{ques.option4}}
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+                <div class="text-center mt20">
+                    <button mat-raised-button color="primary" (click)="onSubmit()">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-top: 72px;">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Progress</mat-card-title>
+                        <mat-card-subtitle>Quiz will automatically submit once the timer reach 0:00</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h1 class="text-center">{{getFormattedTimer()}}</h1>
+                        <mat-spinner style="margin: auto;" mode="determinate"
+                            [value]="(timer/((questions[0].quiz.numOfQuestions) * 2 * 60))*100"></mat-spinner>
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <mat-card class="text-center">
+                    <mat-card-content>
+                        <h2>
+                            Questions Attempted: {{quesAttempted}} <br />
+                            Questions Correct: {{quesCorrect}} <br />
+                            Marks scored: {{totalMarks}}/{{questions[0].quiz.maxMarks}}<br />
+                        </h2>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button mat-raised-button color="primary"> Print</button>
+                    <button mat-raised-button color="primary"> Home</button>
+                </mat-card-actions>
+                </mat-card>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <mat-card *ngFor="let ques of questions; let i =index" class="mt20">
+                            <mat-card-content>
+                                <h3> <b>Q {{i+1}})<span class="ml20" [innerHTML]="ques.content"></span>
+                                    </b>
+                                </h3>
+                                <mat-divider></mat-divider>
+                                <br />
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                      <b> Given Answer: </b>{{ques.givenAnswer}}
+                                    </div>
+                                    <div class="col-md-6">
+                                       <b>Correct Answer: </b>{{answers[i]}}
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

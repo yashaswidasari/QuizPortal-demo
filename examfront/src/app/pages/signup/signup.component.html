@@ -1,0 +1,100 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card class="example-card">
+                <div class="container" class="text-center">
+                    <img src="../../../assets/logo.png" alt="Image Not loaded!" />
+
+                </div>
+
+                <h1 class="text-center">Sign Up Here</h1>
+                <form (ngSubmit)="formSubmit()">
+                    <!-- Username Field (got this style from angular material in form fields) -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username*</mat-label>
+                        <input
+                        required
+                        [(ngModel)]="user.username" 
+                        name="username"
+                         matInput placeholder="Enter Here" />
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                        <mat-hint class="color-Red">Username must be unique!</mat-hint>
+                    </mat-form-field>
+
+                    <!-- User Password Field (got this style from angular material in form fields) -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>User Password*</mat-label>
+                        <input
+                        required
+                        [(ngModel)]="user.password" 
+                        name="password"
+                        type="password"
+                        matInput placeholder="Enter Here" />
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+
+                    <!-- First Name Field (got this style from angular material in form fields) -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>First Name*</mat-label>
+                        <input 
+                        required
+                        [(ngModel)]="user.firstName" 
+                        name="firstName"
+                        matInput placeholder="Enter Here" />
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+
+                    <!-- Last Name Field (got this style from angular material in form fields) -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Last Name*</mat-label>
+                        <input
+                        required
+                        [(ngModel)]="user.lastName" 
+                        name="lastName"
+                        matInput placeholder="Enter Here" />
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+
+                    <!-- Email Field (got this style from angular material in form fields) -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email Address*</mat-label>
+                        <input 
+                        required
+                        [(ngModel)]="user.email" 
+                        name="email"
+                        type="email" 
+                        pattern="[^ @]*@[^ @]*"
+                        matInput placeholder="Enter Here" />
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+
+                     <!-- Phone Field (got this style from angular material in form fields) -->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Phone number*</mat-label>
+                        <input 
+                        required
+                        type="number" 
+                        [(ngModel)]="user.phone" 
+                        name="phone"
+                        matInput placeholder="Enter Here" />
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Sign Up</button>
+                        <button style ="margin-left: 20px" mat-raised-button color="accent">Clear</button>
+                    </div>
+                </form>
+
+            </mat-card>
+            </div>
+        </div>
+
+    </div>
+</div>

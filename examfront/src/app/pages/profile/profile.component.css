@@ -1,0 +1,33 @@
+.imageSize{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    height: 15% !important;
+        
+}
+
+.imageBorder{
+    border-radius: 50%;
+    border: 1px solid rgb(19, 15, 15);
+    padding: 5px;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 2px solid rgba(219, 214, 214, 0.87);
+    border-collapse: collapse;
+}
+
+.table tr td{
+    border: 2px solid rgba(219, 214, 214, 0.87);
+    padding: 10px;
+    
+   
+}
+
+.fontSize20 {
+    font-size: 20px !important;
+}
